@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gauravsngarg.com.githubapi.UserActivity">
+
+    <TextView
+        android:id="@+id/followers"
+        style="@android:style/TextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/logIn"
+        app:layout_constraintStart_toStartOf="@+id/logIn"
+        app:layout_constraintTop_toBottomOf="@+id/logIn"/>
+
+    <TextView
+        android:id="@+id/logIn"
+        style="@android:style/TextAppearance"
+        android:layout_width="220dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/avatar"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="@+id/avatar"
+        app:layout_constraintTop_toBottomOf="@+id/avatar"/>
+
+    <ImageView
+        android:id="@+id/avatar"
+        style="@android:style/TextAppearance"
+        android:layout_width="106dp"
+        android:layout_height="102dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/following"
+        style="@android:style/TextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/followers"
+        app:layout_constraintStart_toStartOf="@+id/followers"
+        app:layout_constraintTop_toBottomOf="@+id/followers"
+        />
+
+    <TextView
+        android:id="@+id/email"
+        style="@android:style/TextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/following"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/following"
+        app:layout_constraintTop_toBottomOf="@+id/following"/>
+
+    <Button
+        android:id="@+id/ownedReposBtn"
+        style="@android:style/TextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/repositories"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintVertical_bias="0.021"/>
+
+</android.support.constraint.ConstraintLayout>
