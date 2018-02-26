@@ -9,6 +9,12 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import gauravsngarg.com.githubapi.R;
+import gauravsngarg.com.githubapi.model.GitHubUser;
+import gauravsngarg.com.githubapi.rest.APIClient;
+import gauravsngarg.com.githubapi.rest.GitHubUserEndPoints;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -48,5 +54,47 @@ public class UserActivity extends AppCompatActivity {
         userNameEntered = extras.getString(USERNAMEINFO);
 
         ButterKnife.bind(this);
+
+        loadData();
+    }
+
+    public void loadData() {
+        final GitHubUserEndPoints apiService = APIClient.getClient().create(GitHubUserEndPoints.class);
+
+        Call<GitHubUser> call = apiService.getUser(userNameEntered);
+
+        call.enqueue(new Callback<GitHubUser>() {
+
+            @Override
+            public void onResponse(Call<GitHubUser> call, Response<GitHubUser> response) {
+                if(response.body().getName() == null)
+                    userNameTV.setText("Username: none");
+                else
+                userNameTV.setText("Username: " + response.body().getName());
+
+                if(response.body().getFollowers() == null)
+                    followersTV.setText("Followers: none");
+                else
+                    followersTV.setText("Followers" + response.body().getFollowers());
+
+                if(response.body().getFollowing() == null)
+                    followingTV.setText("following: none");
+                else
+                followingTV.setText("following" + response.body().getFollowing());
+
+                if(response.body().getEmail() == null)
+                    email.setText("email: none");
+                else
+                    email.setText("email: " + response.body().getEmail());
+                logIn.setText("Login: " + response.body().getLogin());
+
+
+            }
+
+            @Override
+            public void onFailure(Call<GitHubUser> call, Throwable t) {
+
+            }
+        });
     }
 }
