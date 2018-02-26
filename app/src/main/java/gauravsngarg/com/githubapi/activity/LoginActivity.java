@@ -1,4 +1,4 @@
-package gauravsngarg.com.githubapi;
+package gauravsngarg.com.githubapi.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import gauravsngarg.com.githubapi.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 

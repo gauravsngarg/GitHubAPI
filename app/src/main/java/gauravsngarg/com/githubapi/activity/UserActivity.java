@@ -1,4 +1,4 @@
-package gauravsngarg.com.githubapi;
+package gauravsngarg.com.githubapi.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import gauravsngarg.com.githubapi.R;
 
 public class UserActivity extends AppCompatActivity {
 
